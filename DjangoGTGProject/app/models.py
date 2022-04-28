@@ -27,6 +27,8 @@ class Drink (models.Model):
 
 
 class Order (models.Model):
+    id = models.AutoField(primary_key=True)
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
     quantity = models.IntegerField()
+    price = models.FloatField (default=0.0)
 

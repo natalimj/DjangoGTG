@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from .models import Drink
+from .models import Drink, Order
 from .calculation import calculatePrice
 
 
@@ -31,6 +31,20 @@ def orderDrink(request):
         }
     )
 
+
+def orders(request):
+    """Renders the contact page."""
+    assert isinstance(request, HttpRequest)
+    order_list = Order.objects.all().order_by('-id')[:10]
+
+    return render(
+        request,
+        'app/orders.html',
+        {
+           'order_list': order_list,  
+        }
+    )
+
 def createOrder(request):
 
     id = int(request.POST['drink'])
@@ -38,6 +52,8 @@ def createOrder(request):
     quantity= int(request.POST['quantity'])
 
     price = calculatePrice(drinkObject,quantity)
+
+    Order.objects.get_or_create(drink= drinkObject, quantity = quantity, price= price)
 
     return render(
         request, 

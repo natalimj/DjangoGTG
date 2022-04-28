@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\templates\app\createOrder.html" />
+    <Content Include="app\templates\app\orders.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

@@ -15,6 +15,7 @@ urlpatterns = [
     path('orderDrink/', views.orderDrink, name='orderDrink'),
     path('about/', views.about, name='about'),
     path('createOrder/', views.createOrder, name='createOrder'),
+    path('orders/', views.orders, name='orders'),
     path('login/',
          LoginView.as_view
          (
