@@ -33,15 +33,31 @@ def orderDrink(request):
 
 
 def orders(request):
-    """Renders the contact page."""
+    """Renders the orders page."""
     assert isinstance(request, HttpRequest)
-    order_list = Order.objects.all().order_by('-id')[:10]
+    order_list = Order.objects.all().order_by('-id')[:5]
 
     return render(
         request,
         'app/orders.html',
         {
            'order_list': order_list,  
+        }
+    )
+
+def menu(request):
+    assert isinstance(request, HttpRequest)
+    tea_list = Drink.objects.filter(type="TEA").order_by('name')
+    coffee_list = Drink.objects.filter(type="COFFEE").order_by('name')
+    juice_list = Drink.objects.filter(type="JUICE").order_by('name')
+
+    return render(
+        request,
+        'app/menu.html',
+        {
+           'tea_list': tea_list,  
+           'coffee_list': coffee_list,  
+           'juice_list': juice_list,  
         }
     )
 

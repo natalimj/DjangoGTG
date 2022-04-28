@@ -16,6 +16,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('createOrder/', views.createOrder, name='createOrder'),
     path('orders/', views.orders, name='orders'),
+    path('menu/', views.menu, name='menu'),
     path('login/',
          LoginView.as_view
          (

@@ -5,7 +5,7 @@
 <h2>Last 5 orders</h2>
 <ul>
 {% for order in order_list %}
-    <li> {{ order.quantity}} {{ order.drink.name}}  {{ order.quantity}} - Price: {{ order.price}}</li>
+    <li> {{ order.quantity}} {{ order.drink.name}} - Price: {{ order.price}}</li>
 {% endfor %}
 </ul>
 

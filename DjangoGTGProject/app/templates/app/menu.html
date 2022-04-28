@@ -1,0 +1,21 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>MENU</h2>
+<ul>
+    <li>TEA</li>
+{% for tea in tea_list %}
+    <li> {{tea.name}}  - Price: {{ tea.price}}</li>
+{% endfor %}
+    <li>COFFEE</li>
+{% for coffee in coffee_list %}
+    <li>  {{coffee.name}}  - Price: {{ coffee.price}}</li>
+{% endfor %}
+    <li>JUICE</li>
+{% for juice in juice_list %}
+    <li> {{ juice.name}}  - Price: {{ juice.price}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
