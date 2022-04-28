@@ -1,0 +1,21 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>Welcome to GTG Cafe</h2>
+<br />
+<h4>Select your drink</h4>
+
+<form method="post" action="/createOrder/">
+    {% csrf_token %}
+    <select type="text" id="drink" name="drink">
+        {% for drink in cafe_list %}
+    <option value="{{ drink.id }}">{{ drink.name }} -- {{ drink.price }}</option>
+    {% endfor %}
+    </select>
+    <input type="text" placeholder="quantity" name="quantity"><br>
+    <input type="submit" value="Order">
+</form>
+
+{% endblock %}
+
