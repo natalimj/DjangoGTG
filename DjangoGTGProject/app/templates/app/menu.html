@@ -3,19 +3,23 @@
 {% block content %}
 
 <h2>MENU</h2>
-<ul>
-    <li>TEA</li>
+
+
+<ul class="list-group">
+    <li class="list-group-item" style="background-color:antiquewhite">TEA</li>
 {% for tea in tea_list %}
-    <li> {{tea.name}}  - Price: {{ tea.price}}</li>
+    <li class="list-group-item">{{tea.name}}  - Price: {{ tea.price}}</li> 
 {% endfor %}
-    <li>COFFEE</li>
+    <li class="list-group-item" style="background-color:aqua">COFFEE</li>
 {% for coffee in coffee_list %}
-    <li>  {{coffee.name}}  - Price: {{ coffee.price}}</li>
+    <li class="list-group-item"> {{coffee.name}}  - Price: {{ coffee.price}}</li>
 {% endfor %}
-    <li>JUICE</li>
+    <li class="list-group-item" style="background-color:coral">JUICE</li>
 {% for juice in juice_list %}
-    <li> {{ juice.name}}  - Price: {{ juice.price}}</li>
+   <li class="list-group-item">{{ juice.name}}  - Price: {{ juice.price}}</li>
 {% endfor %}
+     
 </ul>
+
 
 {% endblock %}

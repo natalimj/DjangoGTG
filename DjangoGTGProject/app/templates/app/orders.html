@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h2>Last 5 orders</h2>
-<ul>
+<h2 style="color:coral">Last 5 orders</h2>
+<br />
+<ul class="list-group list-group-flush">
 {% for order in order_list %}
-    <li> {{ order.quantity}} {{ order.drink.name}} - Price: {{ order.price}}</li>
+   <li class="list-group-item"> {{ order.quantity}} {{ order.drink.name}} - Price: {{ order.price}}      <br />           {{order.order_date}}</li>
 {% endfor %}
 </ul>
 
-
-
 {% endblock %}
+

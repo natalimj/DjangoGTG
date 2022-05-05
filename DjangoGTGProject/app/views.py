@@ -69,7 +69,8 @@ def createOrder(request):
 
     price = calculatePrice(drinkObject,quantity)
 
-    Order.objects.get_or_create(drink= drinkObject, quantity = quantity, price= price)
+    
+    Order.objects.get_or_create(drink= drinkObject, quantity = quantity, price= price, order_date = datetime.now())
 
     return render(
         request, 

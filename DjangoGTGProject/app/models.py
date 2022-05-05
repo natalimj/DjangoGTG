@@ -1,6 +1,6 @@
 from django.db import models
 from django.db import models
-from enum import Enum
+from datetime import datetime
 
 
 class Drink (models.Model):
@@ -30,5 +30,6 @@ class Order (models.Model):
     id = models.AutoField(primary_key=True)
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
     quantity = models.IntegerField()
-    price = models.FloatField (default=0.0)
+    price = models.FloatField (default= 0.0)
+    order_date = models.DateTimeField(default = datetime.now())
 

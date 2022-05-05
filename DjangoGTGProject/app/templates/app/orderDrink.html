@@ -2,20 +2,21 @@
 
 {% block content %}
 
-<h2>Welcome to GTG Cafe</h2>
-<br />
-<h4>Select your drink</h4>
+<h2 style="color:coral">Select your drink</h2>
 
 <form method="post" action="/createOrder/">
     {% csrf_token %}
-    <select type="text" id="drink" name="drink">
+
+    <select type="text" id="drink" name="drink" class="form-select form-control">
         {% for drink in cafe_list %}
-    <option value="{{ drink.id }}">{{ drink.name }} -- {{ drink.price }}</option>
+    <option  value="{{ drink.id }}">{{ drink.name }} -- {{ drink.price }}</option>
     {% endfor %}
     </select>
-    <input type="text" placeholder="quantity" name="quantity"><br>
-    <input type="submit" value="Order">
+    <br />
+    <input type="text" class="form-control" placeholder="quantity" name="quantity"><br>
+    <button type="submit" class="btn btn-danger" value="Order">Order</button>
 </form>
+
 
 {% endblock %}
 
